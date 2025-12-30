@@ -4,6 +4,8 @@ import LazyWrapper from "@/components/LazyWrapper";
 import { lazy } from "react";
 
 const Home = LazyWrapper(lazy(() => import("@/pages/home")));
+const NotFound = LazyWrapper(lazy(() => import("@/pages/notfound")));
+
 const routes = [
   {
     path: "/",
@@ -14,6 +16,10 @@ const routes = [
         element: <Home />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ];
 export default function Routes(){
